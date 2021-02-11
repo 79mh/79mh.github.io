@@ -8,19 +8,19 @@
     <title>正在進入...</title>
 </head>
 <body>
-<h5>新網址：https://68mh.cc</h5>
-<div>請使用safari瀏覽器進入：https://68mh.cc 重新添加至主屏幕</div>
+<h5>新網址：https://60mh.cc</h5>
+<div>請使用safari瀏覽器進入：https://60mh.cc 重新添加至主屏幕</div>
 <button onclick="toNew()" id="toNew" style="display: none;width: 80%;margin:300px auto;line-height: 50px;text-align: center;">進入新網址</button>
 <iframe src="https://store.seyoumh.com/store.html" id="store-middle" style="display: none;"></iframe>
 <script>
     const toNew = ()=>{
-        open(location.href.replace('79mh.cc','68mh.cc'),'_self');
+        open(location.href.replace('79mh.cc','60mh.cc'),'_self');
     }
-    if(localStorage.IsTo68){
+    if(localStorage.IsTo60){
         toNew();
     }
     document.getElementById('store-middle').addEventListener('load',({target})=>{
-        if(localStorage.IsTo68){
+        if(localStorage.IsTo60){
             return ;
         }
         window.storeMiddle = target.contentWindow;
@@ -38,7 +38,7 @@
             if(localStorage.ReadProgress){
                 setStorage('ReadProgress',localStorage.ReadProgress);
             }
-            localStorage.IsTo68 = '1';
+            localStorage.IsTo60 = '1';
             document.querySelector('#toNew').style.display = 'block';
             toNew();
         },200);
