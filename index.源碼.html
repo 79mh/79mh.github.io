@@ -6,9 +6,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>正在進入...</title>
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(function() { console.log('Service Worker Registered'); });
+        }
+    </script>
 </head>
 <body>
     <div>正在進入...請稍後...</div>
+    <br/>
+    <div style="text-align: center;font-size: 1.5rem;font-weight: bold;">
+        <div>移动网络封锁严重</div>
+        <div>推荐使用联通或电信网络</div>
+    </div>
+    <div onclick="toNew()" id="toNew" style="display:none;width: 80%;margin:300px auto;padding:15px 0;font-size:1.3rem;text-align: center;cursor: pointer;background-color: orange;border-radius: 7px;">進入新網址</div>
+
     <script>
         // let servers = localStorage.getItem('servers');//从缓存中读取服务器列表
         // if(!servers || servers.length === 0){
@@ -33,6 +45,7 @@
         //         location.hash;
         //     open(src,'_self');
         // };
+        // let failCount = 0;
         // servers.forEach(host=>{
         //     fetch(host+'/home/App/getServers').then(res=>res.json()).then(res=>{
         //         if(res.code === 200){
@@ -40,7 +53,14 @@
         //             localStorage.setItem('servers',JSON.stringify(res.data));
         //             newHost = host;
         //             document.querySelector('#toNew').style.display = 'block';
-        //             //      toNew();
+        //             toNew();
+        //         }
+        //     }).catch(err=>{
+        //         failCount++;
+        //         if(failCount >= servers.length){
+        //             newHost = "https://687574.ichengyun.net/";
+        //             document.querySelector('#toNew').style.display = 'block';
+        //             toNew();
         //         }
         //     });
         // });
